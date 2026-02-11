@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
+  <!-- Base path (managed by Flutter build) -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <!-- iOS meta tags & icons -->
+  <!-- Primary SEO meta (will be overridden dynamically by Flutter) -->
+  <meta name="description" content="Wellness360 – Doctor-led metabolic health and lifestyle medicine platform.">
+
+  <!-- Mobile / PWA -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="wellness_360">
+  <meta name="apple-mobile-web-app-title" content="Wellness360">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
- <title>Wellness 360</title>
-<meta name="description" content="Wellness 360 – holistic health, fitness, and wellbeing platform">
+  <!-- App title (fallback only; Flutter will override) -->
+  <title>Wellness360</title>
+
+  <!-- PWA manifest -->
   <link rel="manifest" href="manifest.json">
+
+  <!-- 🔍 Force HTML renderer for crawlers (seo_renderer requirement) -->
+  <script>
+    const regExp = new RegExp("bot|google|baidu|bing|msn|teoma|slurp|yandex", "i");
+    if (regExp.test(navigator.userAgent)) {
+      window.flutterWebRenderer = "html";
+    }
+  </script>
 </head>
+
 <body>
+  <!-- Flutter bootstrap -->
   <script src="flutter_bootstrap.js" async></script>
 </body>
+
 </html>
